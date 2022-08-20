@@ -14,6 +14,25 @@
                 <target>1.6</target>
             </configuration>
         </plugin>
+      <plugin>
+      <groupId>org.sonatype.plugins</groupId>
+      <artifactId>nexus-staging-maven-plugin</artifactId>
+      <version>1.6.6</version>
+      <extensions>true</extensions>
+      <configuration>
+        <serverId>nexus</serverId>
+        <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+        <skipStaging>true</skipStaging>
+      </configuration>
+        <executions>
+        <execution>
+          <id>default-deploy</id>
+          <phase>deploy</phase>
+          <goals>
+            <goal>deploy</goal>
+          </goals>
+        </execution>
+      </executions>
     </plugins>
 </build>
 </project>
